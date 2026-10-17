@@ -27,10 +27,10 @@ Then:
 
 ## Results
 
-| Agent | Mean return (100 episodes) |
-|---|---|
-| Random | -198.4 |
-| DQN | (training...) |
+| Agent | Mean return (100 episodes) | Episodes ≥ 200 |
+|---|---|---|
+| Random | -198.4 | 0/100 |
+| DQN (ε = 0) | 249.4 | 85/100 |
 
 ## What i learned
 

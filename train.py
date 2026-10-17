@@ -3,6 +3,22 @@
 Each step: pick an action --> step env --> store eperience --> learn from a batch
 Each episode: decay epsilon, log the return
 Solved when the average return over the last 100 episodes is >= 200
+
+Train a DQN agent on LunarLander-v3.
+
+Each step: pick action -> step env -> store experience -> learn from a batch.
+Each episode: decay epsilon, log the return.
+Solved when the average return over the last 100 episodes is >= 200.
+
+First run: solved at episode 616 (avg100 = 200.1)
+- ep 0-150:   mostly random, avg climbs from -218 to -54 (learns to not crash)
+- ep 170-250: plateau around -30, hover phase (stays in the air to avoid the
+              -100 crash, hasnt found landing yet)
+- ep 260+:    first real landings (140, 259, 256), avg climbs fast
+- ep 450-540: avg drops 162 -> 118, normal DQN instability, an update made
+              the policy worse for a while before it recovered
+- ep 616:     solved, but measured with epsilon ~0.05 while still learning,
+              so the true skill needs a separate evaluation with epsilon = 0
 """
 
 import gymnasium as gym
